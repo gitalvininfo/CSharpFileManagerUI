@@ -18,7 +18,7 @@
 
 
             <Style x:Key="MenuButtonStyle" TargetType="{x:Type ToggleButton}">
-                
+
                 <Setter Property="Background" Value="WhiteSmoke"/>
                 <Setter Property="Foreground" Value="Gray"/>
                 <Setter Property="HorizontalContentAlignment" Value="Left"/>
@@ -36,22 +36,24 @@
 
                                 <Grid>
                                     <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="30"/> <!--Icon-->
-                                        <ColumnDefinition/> <!--Content-->
+                                        <ColumnDefinition Width="30"/>
+                                        <!--Icon-->
+                                        <ColumnDefinition/>
+                                        <!--Content-->
 
                                     </Grid.ColumnDefinitions>
 
                                     <Path Data="{TemplateBinding Tag}"
                                           Fill="{TemplateBinding Foreground}"
                                           Style="{StaticResource {x:Type Path}}"/>
-                                    
+
                                     <ContentPresenter
                                         Grid.Column="1"
                                             TextBlock.TextAlignment="Left"
                                             VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
                                             Content="{TemplateBinding Content}"/>
                                 </Grid>
-                                
+
                             </Border>
 
                             <ControlTemplate.Triggers>
@@ -70,7 +72,7 @@
             </Style>
         </ResourceDictionary>
     </Window.Resources>
-    
+
 
     <Border
         Background="WhiteSmoke"
@@ -89,16 +91,17 @@
 
                 <!--right panel-->
                 <ColumnDefinition Width="250"/>
- 
+
             </Grid.ColumnDefinitions>
 
             <Grid>
                 <Grid.RowDefinitions>
+                    <RowDefinition Height="100"/>
+                    <RowDefinition Height="150"/>
+                    <RowDefinition Height="Auto"/>
                     <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition Height="auto"/>
-                    <RowDefinition/>
-                    <RowDefinition/>
+                    <RowDefinition Height="150"/>
+                    <RowDefinition Height="100"/>
                 </Grid.RowDefinitions>
 
                 <!--logo-->
@@ -174,9 +177,8 @@
                           Margin="0, 10"
                           >
                         <TextBlock
-                            FontSize="15"
                             Text="Logout"
-                            Foreground="LightGray"
+                            Foreground="Gray"
                             VerticalAlignment="Center"/>
                         <Path 
                             Data="{StaticResource right}"
@@ -184,7 +186,6 @@
                             VerticalAlignment="Center"/>
                     </Grid>
                 </StackPanel>
-
 
                 <Separator 
                     Grid.Row="1"
@@ -229,7 +230,53 @@
                             Tag="{StaticResource support}"
                             />
                 </StackPanel>
+
+                <Grid Grid.Row="4">
+                    <Rectangle
+                        RadiusX="10"
+                        RadiusY="10"        
+                        Grid.Row="4"
+                        Width="200"
+                        StrokeDashArray="5"
+                        StrokeThickness="1"
+                        Stroke="Silver"
+                    />
+
+                    <StackPanel
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center">
+                        <Path Data="{StaticResource documentfile}"
+                              Style="{StaticResource {x:Type Path}}"/>
+                        <TextBlock 
+                            Margin="0, 5"
+                            Foreground="Gray"
+                            Text="Drop File"/>
+                    </StackPanel>
+                </Grid>
+
+                <Button Grid.Row="5"
+                        Margin="25"
+                        BorderThickness="0"
+                        Background="Teal"
+                        Content="Upload File"
+                        Foreground="White"
+                        Height="50">
+                    <Button.Resources>
+                        <Style TargetType="{x:Type Border }">
+                            <Setter Property="CornerRadius" Value="10"/>
+                        </Style>
+                    </Button.Resources>
+                </Button>
+
             </Grid>
+
+            
+            <!--Main Content-->
+            <Grid Grid.Column="1"
+                  Background="#E1E4E6">
+                
+            </Grid>
+
         </Grid>
 
 
