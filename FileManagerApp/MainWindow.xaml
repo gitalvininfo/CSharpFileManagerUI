@@ -5,9 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FileManagerApp"
         mc:Ignorable="d"
-        Title="MainWindow" Height="976" Width="1024"
+        Title="MainWindow" Height="976" Width="1384"
         ResizeMode="NoResize"
         FontSize="15"
+        WindowStartupLocation="CenterScreen"
         Background="Transparent">
 
     <Window.Resources>
@@ -273,11 +274,87 @@
 
             </Grid>
 
-            
+
             <!--Main Content-->
             <Grid Grid.Column="1"
                   Background="#E1E4E6">
-                
+
+                <!--Searchbox and Create new-->
+                <Grid Height="100"
+                      Margin="40, 0"
+                      VerticalAlignment="top">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="200"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Border
+                        Background="WhiteSmoke"
+                        Height="50"
+                        CornerRadius="10">
+                        <Grid VerticalAlignment="Stretch">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="50"/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition Width="50"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Path
+                                Style="{StaticResource {x:Type Path}}"
+                                Data="{StaticResource search}"/>
+
+                            <TextBlock
+                                Foreground="Gray"
+                                Grid.ColumnSpan="3"
+                                Padding="50,0"
+                                Text="Search"
+                                HorizontalAlignment="Stretch"
+                                VerticalAlignment="Center"
+                                TextAlignment="Left"/>
+
+                            <Path
+                                Grid.Column="2"
+                                Style="{StaticResource {x:Type Path}}"
+                                Data="{StaticResource mic}"/>
+                        </Grid>
+                    </Border>
+                    <Button Grid.Column="1"
+                        Margin="25,0,0,0"
+                        BorderThickness="0"
+                        Background="Teal"
+                        Foreground="White"
+                        Height="50"
+                            HorizontalAlignment="Stretch"
+                            VerticalAlignment="Stretch"
+                           >
+                        <Button.Resources>
+                            <Style TargetType="{x:Type Border }">
+                                <Setter Property="CornerRadius" Value="10"/>
+                            </Style>
+                        </Button.Resources>
+                        <Button.Content>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="50"/>
+                                    <ColumnDefinition/>
+
+                                </Grid.ColumnDefinitions>
+                                
+                                <Path
+                                    Data="{StaticResource plus}"
+                                    Style="{StaticResource {x:Type Path}}"
+                                    Fill="White"
+                                    HorizontalAlignment="center"/>
+                                <TextBlock 
+                                    Grid.Column="1"
+                                    HorizontalAlignment="Center"
+                                    VerticalAlignment="Center"
+                                    Text="Create New"/>
+                            </Grid>
+                        </Button.Content>
+                    </Button>
+
+                </Grid>
             </Grid>
 
         </Grid>
