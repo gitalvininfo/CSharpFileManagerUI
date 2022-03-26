@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FileManagerApp"
         mc:Ignorable="d"
-        Title="MainWindow" Height="745  " Width="1024"
+        Title="MainWindow" Height="976" Width="1024"
         ResizeMode="NoResize"
         FontSize="15"
         Background="Transparent">
@@ -24,6 +24,8 @@
                 <Setter Property="HorizontalContentAlignment" Value="Left"/>
                 <Setter Property="VerticalContentAlignment" Value="Center"/>
                 <Setter Property="Height" Value="40"/>
+                <Setter Property="Margin" Value="20,0,-1,0"/>
+
 
                 <Setter Property="Template">
                     <Setter.Value>
@@ -36,7 +38,7 @@
 
                                 <Grid>
                                     <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="30"/>
+                                        <ColumnDefinition Width="50"/>
                                         <!--Icon-->
                                         <ColumnDefinition/>
                                         <!--Content-->
@@ -145,6 +147,7 @@
                                                 <Grid>
                                                     <Ellipse
                                                     HorizontalAlignment="Left"
+                                                        Margin="2,0"
                                                     Width="40"
                                                     Height="40"
                                                     Stroke="White"
@@ -159,7 +162,7 @@
                                                     <ContentPresenter
                                                     HorizontalAlignment="Center"
                                                     VerticalAlignment="Center"
-                                                    Content="The Trading Comedy"/>
+                                                    Content="Alvin Yanson"/>
 
 
                                                 </Grid>
@@ -195,7 +198,7 @@
 
                 <!--Menu-->
                 <StackPanel
-                    Width="200"
+                    
                     Grid.Row="2"
                     Margin="0, 10">
                     <RadioButton 
